@@ -1,52 +1,59 @@
-* { 
-  margin: 0; 
-  padding: 0; 
-  box-sizing: border-box; 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 32px;
 }
 
 body {
   background: rgb(200, 176, 176);
-  font: 22px Helvetica, Arial; 
+  font-style: Helvetica, Arial;
 }
 
 h1 {
-  margin: 1rem 10%;
-  font-size: 26px;
+  margin: 20px 10%;
+  font-size: 1.5rem;
 }
 
-form { 
-  background: #000; 
-  padding: 3px; 
-  position: fixed; 
-  bottom: 0; 
-  width: 100%; 
+form {
+  background: #000;
+  padding: 3px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 
-form input { 
-  border: 0; 
-  padding: 10px; 
-  width: 90%; 
-  margin-right: .5%; 
+form input {
+  border: 0;
+  padding: 10px;
+  width: 90%;
+  margin-right: .5%;
 }
 
-form button { 
-  width: 9%; 
-  background: rgb(130, 224, 255); 
-  border: none; 
-  padding: 10px; 
+form button {
+  width: 9%;
+  background: rgb(130, 224, 255);
+  border: none;
+  padding: 10px;
 }
 
-#messages { 
-  list-style-type: none; 
-  margin: 0; 
-  padding: 0; 
+#user {
+  color: rgb(10, 0, 144);
+  font-size: 1.1rem;
 }
 
-#messages li { 
+#messages {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+#messages li {
   padding: 5px 10px;
   background: rgb(212, 192, 192);
+  font-size: 1rem;
 }
 
-#messages li:nth-child(odd) { 
-  background: rgb(235, 212, 212); 
+#messages li:nth-child(odd) {
+  background: rgb(235, 212, 212);
 }
