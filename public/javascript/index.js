@@ -6,11 +6,11 @@ const input     = document.getElementById('input'),
 
 submit.addEventListener('click', e => {
   e.preventDefault();
-  socket.emit('chat message', input.value);
+  const message = `<li><strong>${username} says:</strong> ${input.value}</li>`;
+  socket.emit('chat message', message);
   input.value = '';
 });
 
 socket.on('chat message', msg => {
-  const message = `<li><strong>${username} says:</strong> ${msg}</li>`;
-  messages.innerHTML += message;
+  messages.innerHTML += msg;
 });
