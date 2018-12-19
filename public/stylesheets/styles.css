@@ -6,7 +6,12 @@
 
 body {
   background: rgb(200, 176, 176);
-  font: 13px Helvetica, Arial; 
+  font: 22px Helvetica, Arial; 
+}
+
+h1 {
+  margin: 1rem 10%;
+  font-size: 26px;
 }
 
 form { 
@@ -38,9 +43,10 @@ form button {
 }
 
 #messages li { 
-  padding: 5px 10px; 
+  padding: 5px 10px;
+  background: rgb(212, 192, 192);
 }
 
 #messages li:nth-child(odd) { 
-  background: #eee; 
+  background: rgb(235, 212, 212); 
 }

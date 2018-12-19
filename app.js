@@ -6,7 +6,7 @@ const express = require('express'),
 app.use(express.static('public'));
 
 const onConnect = socket => {
-  socket.on('chat message', (msg) => {
+  socket.on('chat message', msg => {
     io.emit('chat message', msg);
   });
 };
