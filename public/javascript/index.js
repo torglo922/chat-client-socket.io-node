@@ -5,7 +5,7 @@ const input     = document.getElementById('input'),
 
 let username = '';
 
-const checkUsername = (() => {
+const checkUsername = () => {
   while (username.length <= 0) {
     username = prompt('Please enter your name').trim();
     if (username.length > 30) {
@@ -13,16 +13,32 @@ const checkUsername = (() => {
       username = '';
     }
   }
-})();
+};
 
-submit.addEventListener('click', e => {
+checkUsername();
+
+const appendChatMessages = (msg) => {
+  const chatMessage = document.createElement('span'),
+        name        = document.createElement('span'),
+        li          = document.createElement('li');
+  name.classList.add('user-name');
+  chatMessage.classList.add('user-message');
+  name.innerText = `${msg.user}: `;
+  chatMessage.innerText = `${msg.message}`;
+  li.appendChild(name);
+  li.appendChild(chatMessage);
+  messages.appendChild(li);
+}
+
+const sendChatMessage = (e) => {
   e.preventDefault();
   if (!input.value) return;
-  let message = `<li><strong id='user'>${username}:</strong> ${input.value}</li>`;
+
+  const message = { user: username, message: input.value }
   socket.emit('chat message', message);
   input.value = '';
-});
+}
 
-socket.on('chat message', msg => {
-  messages.innerHTML += msg;
-});
+submit.addEventListener('click', sendChatMessage);
+
+socket.on('chat message', msg => appendChatMessages(msg));

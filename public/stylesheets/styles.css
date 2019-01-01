@@ -6,7 +6,7 @@
 }
 
 body {
-  background: rgb(200, 176, 176);
+  background: lightblue;
   font-style: Helvetica, Arial;
 }
 
@@ -37,9 +37,10 @@ form button {
   padding: 10px;
 }
 
-#user {
+.user-name {
   color: rgb(10, 0, 144);
   font-size: 1.1rem;
+  font-weight: bold;
 }
 
 #messages {
@@ -50,10 +51,32 @@ form button {
 
 #messages li {
   padding: 5px 10px;
-  background: rgb(212, 192, 192);
+  background: lightblue;
   font-size: 1rem;
 }
 
 #messages li:nth-child(odd) {
-  background: rgb(235, 212, 212);
+  background: rgb(192, 239, 255);
+}
+
+#messages li:nth-last-child(1) {
+  margin-bottom: 68px;
+}
+
+@media only screen and (max-width: 600px) {
+  * {
+    font-size: 40px;
+  }
+
+  h1 {
+    font-size: .7rem;
+  }
+
+  form input {
+    width: 69%;
+  }
+  
+  form button {
+    width: 30%;
+  }
 }
